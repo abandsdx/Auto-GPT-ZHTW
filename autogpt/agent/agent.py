@@ -116,7 +116,7 @@ class Agent:
                     )
                     command_name, arguments = get_command(assistant_reply_json)
                     if cfg.speak_mode:
-                        say_text(f"我想要执行 {command_name}")
+                        say_text(f"我想要執行 {command_name}")
 
                     arguments = self._resolve_pathlike_command_args(arguments)
 
@@ -132,7 +132,7 @@ class Agent:
                     "下一步: ",
                     Fore.CYAN,
                     f"命令 = {Fore.CYAN}{command_name}{Style.RESET_ALL}  "
-                    f"参数 = {Fore.CYAN}{arguments}{Style.RESET_ALL}",
+                    f"參數 = {Fore.CYAN}{arguments}{Style.RESET_ALL}",
                 )
 
                 logger.info(
@@ -142,10 +142,10 @@ class Agent:
                 )
                 while True:
                     if cfg.chat_messages_enabled:
-                        console_input = clean_input("等待你的反馈中...")
+                        console_input = clean_input("等待你的回應中...")
                     else:
                         console_input = clean_input(
-                            Fore.MAGENTA + "输入:" + Style.RESET_ALL
+                            Fore.MAGENTA + "輸入:" + Style.RESET_ALL
                         )
                     if console_input.lower().strip() == cfg.authorise_key:
                         user_input = "生成下一个命令的JSON"
